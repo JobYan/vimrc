@@ -123,7 +123,7 @@ map <C-F5> :call Debug()<CR>
 " Define Debug function to debug programs
 func! Debug()
     exec "w"
-    " C程序
+    " C
     if &filetype == 'c'
         if has("win16") || has("win32")
             exec "!gcc % -o %<.exe"
@@ -140,7 +140,7 @@ func! Debug()
             exec "!g++ % -g -o %<"
             exec "!gdb ./%<"
         endif
-    " Java程序
+    " Java
     elseif &filetype == 'java'
         exec "!javac %"
         exec "!jdb %<"
